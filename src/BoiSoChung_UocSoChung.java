@@ -11,7 +11,7 @@ public class BoiSoChung_UocSoChung {
     }
 
     static long BoiChung (int a, int b) {
-        long bc = a / UocChung(a, b) * b;
+        long bc = (long)a / UocChung(a, b) * b; // trong java, kiểu của toàn bộ biểu thức được quyết định bởi toán hạng
         return bc;
     }
 
