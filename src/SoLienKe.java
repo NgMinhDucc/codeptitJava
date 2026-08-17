@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SoLienKe {
     static String Solution(String n) {
         for (int i = 0; i < n.length() - 1; i++) {
-            if (Math.abs((int)n.charAt(i) - (int)n.charAt(i + 1)) != 1) {
+            if (Math.abs((n.charAt(i) - '0') - (n.charAt(i + 1) - '0')) != 1) {
                 return "NO";
             }
         }
