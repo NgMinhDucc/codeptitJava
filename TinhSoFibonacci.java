@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class TinhSoFibonacci {
+    static long nFibonacci (int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        long f1 = 1, f2 = 1, fn = 0;
+        for (int i = 3; i <= n; i++) {
+            fn = f1 + f2;
+            f2 = f1;
+            f1 = fn;
+        }
+        return fn;
+    }
+
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int test = sc.nextInt();
+        while (test-- > 0) {
+            int n = sc.nextInt();
+            System.out.println(nFibonacci(n));
+        }
+
+        sc.close();
+    }
+}
