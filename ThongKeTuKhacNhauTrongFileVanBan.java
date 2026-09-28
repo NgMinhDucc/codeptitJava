@@ -1,22 +1,33 @@
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.util.*;
+import java.io.*;
 
 public class ThongKeTuKhacNhauTrongFileVanBan {
-	public static void main(String[] args) {
-		File file = new File("VANBAN.in");
-		HashMap<String, Integer> map = new HashMap<>();
-		ArrayList<String> arr = new ArrayList<>();
+  public static void main(String[] args) throws IOException, FileNotFoundException {
+    File file = new File("VANBAN.in");
+    Scanner sc = new Scanner(file);
+    TreeMap<String, Integer> map = new TreeMap<>();
 
-		try (Scanner sc = new Scanner(file)) {
-			while (sc.hasNextLine()) {
-				String line = sc.nextLine();
-				arr.add(line);
-			}
-		} catch (FileNotFoundException error) {
-			error.printStackTrace();
-		}
-	}
+    int n = Integer.parseInt(sc.nextLine().trim());
+    for (int i = 1; i <= n; i++) {
+      String line = sc.nextLine().toLowerCase().trim();
+      // String[] words = line.split("[\\s,.?!:;()/-]+");
+      String[] words = line.split("[^a-z0-9]");
+      for (String word : words) {
+        if (!word.isEmpty()) {
+          map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+      }
+    }
+
+    ArrayList<String> arr = new ArrayList<>(map.keySet());
+    arr.sort((a, b) -> {
+        return map.get(b) - map.get(a);
+    });
+
+    for (String s : arr) {
+      System.out.println(s + " " + map.get(s));
+    }
+
+    sc.close();
+  }
 }
