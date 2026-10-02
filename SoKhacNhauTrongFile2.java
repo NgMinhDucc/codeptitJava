@@ -23,5 +23,7 @@ public class SoKhacNhauTrongFile2 {
     map.forEach((k, v) -> {
       System.out.printf("%d %d\n", k, v);
     });
+
+    data.close();
   }
 }
