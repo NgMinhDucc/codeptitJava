@@ -1,0 +1,59 @@
+import java.awt.Point;
+import java.util.*;
+
+public class BonDiemTrenMatPhang {
+  public static class Point3D {
+    int x, y, z;
+
+    public Point3D (int x, int y, int z) {
+      this.x = x;
+      this.y = y;
+      this.z = z;
+    }
+
+    public int calX (Point3D other) {
+      return other.x - this.x;
+    }
+
+    public int calY (Point3D other) {
+      return other.y - this.y;
+    }
+
+    public int calZ (Point3D other) {
+      return other.z - this.z;
+    }
+
+    public bool check (Point3D a, Point3D b, PointD c, Point3D d) {
+      int a1 = a.calX(b), a2 = a.calY(b), a3 = a.calZ(b);
+      int b1 = a.calX(c), b2 = a.calY(c), b3 = a.calZ(c);
+      int c1 = a.calX(d), c2 = a.calY(d), c3 = a.calZ(d);
+
+      int det = a1 * b2 * c3 + a2 * b3 * c1 + a3 * b1 * c2 - a3 * b2 * c1 - a1 * b3 * c2 - a2 * b1 * c3;
+      if (det == 0) {
+        return true;
+      }
+      return false;
+    }
+  }
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    int test = sc.nextInt();
+    while (test-- > 0) {
+      Point3D p1 = new Point3D(sc.nextInt(),sc.nextInt(),sc.nextInt());
+      Point3D p2 = new Point3D(sc.nextInt(),sc.nextInt(),sc.nextInt());
+      Point3D p3 = new Point3D(sc.nextInt(),sc.nextInt(),sc.nextInt());
+      Point3D p4 = new Point3D(sc.nextInt(),sc.nextInt(),sc.nextInt());
+
+      if (Point3D.check(p1, p2, p3, p4)) {
+        System.out.println("YES");
+      }
+      else {
+        System.out.println("NO");
+      }
+    }
+
+    sc.close();
+  }
+}
