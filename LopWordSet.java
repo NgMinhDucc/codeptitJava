@@ -50,5 +50,6 @@ public class LopWordSet {
         WordSet s2 = new WordSet(in.nextLine());
         System.out.println(s1.union(s2));
         System.out.println(s1.intersection(s2));
+        in.close();
     }
 }

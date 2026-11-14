@@ -25,7 +25,6 @@ public class DanhSachMonThi{
   public static void main(String[] args) throws IOException, FileNotFoundException {
     Scanner sc = new Scanner(new File("MONHOC.in"));
 		
-    int n = Integer.parseInt(sc.next());
     sc.nextLine();
     ArrayList<MonThi> arr = new ArrayList<>();
     while (sc.hasNextLine()) {

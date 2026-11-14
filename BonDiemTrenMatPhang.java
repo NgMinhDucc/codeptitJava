@@ -51,5 +51,6 @@ public class BonDiemTrenMatPhang {
         System.out.println("NO");
       }
     }
+    sc.close();
   }
 }

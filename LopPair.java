@@ -56,5 +56,6 @@ public class LopPair {
             }
             if(!check) System.out.println(-1);
         }
+        sc.close();
     }
 }

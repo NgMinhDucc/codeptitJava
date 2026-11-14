@@ -37,9 +37,6 @@ public class SoNguyenToTrong2FileNhiPhan {
       }
     }
 
-    for (Integer i : map.keySet()) {
-    }
-
     obj1.close();
     obj2.close();
   }

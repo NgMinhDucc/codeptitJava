@@ -44,5 +44,6 @@ public class LopIntSet {
         IntSet s2 = new IntSet(b);
         IntSet s3 = s1.union(s2);
         System.out.println(s3);
+        sc.close();
     }
 }
